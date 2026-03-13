@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iglesia Cristiana Satánica</title>
-<meta name="description" content="Venid a mi los que estáis trabajados y cargados y yo os haré descansar. Comunidad hispanohablante — Missouri.">
+<meta name="description" content="Venid a mi los que estáis trabajados y cargados y yo os haré descansar. La congregación hispanohablante del Señor Oscuro — bajo la guía del Profeta Cesar Acosta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -12,168 +13,226 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black:   #070707;
-  --deep:    #0d0b0b;
-  --surface: #131010;
-  --border:  #251a1a;
-  --muted:   #5c4c4c;
-  --dim:     #7a6a6a;
-  --text:    #c5b5ae;
-  --light:   #e5d8d2;
-  --crimson: #b02020;
-  --glow:    #c0392b;
-  --gold:    #8a6e30;
-  --gold-lt: #b8944e;
-  --white:   #f2ebe6;
+–black:   #070707;
+–deep:    #0d0b0b;
+–surface: #131010;
+–border:  #251a1a;
+–muted:   #5c4c4c;
+–dim:     #7a6a6a;
+–text:    #c5b5ae;
+–light:   #e5d8d2;
+–crimson: #b02020;
+–glow:    #c0392b;
+–gold:    #8a6e30;
+–gold-lt: #b8944e;
+–white:   #f2ebe6;
 }
 
 html { scroll-behavior: smooth; }
 body {
-  background: var(--black);
-  color: var(--text);
-  font-family: 'EB Garamond', Georgia, serif;
-  font-size: 18px;
-  line-height: 1.75;
-  overflow-x: hidden;
+background: var(–black);
+color: var(–text);
+font-family: ‘EB Garamond’, Georgia, serif;
+font-size: 18px;
+line-height: 1.75;
+overflow-x: hidden;
 }
 body::after {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events: none; z-index: 9999; opacity: 0.3;
+content: ‘’;
+position: fixed; inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 512 512’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.75’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.05’/%3E%3C/svg%3E”);
+pointer-events: none; z-index: 9999; opacity: 0.3;
 }
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--black); }
-::-webkit-scrollbar-thumb { background: var(--crimson); }
+::-webkit-scrollbar-track { background: var(–black); }
+::-webkit-scrollbar-thumb { background: var(–crimson); }
 
-/* NAV */
+/* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 800;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.1rem 3.5rem;
-  border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s;
+position: fixed; top: 0; left: 0; right: 0; z-index: 800;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.1rem 3.5rem;
+border-bottom: 1px solid transparent;
+transition: background 0.4s, border-color 0.4s;
 }
-nav.scrolled { background: rgba(7,7,7,0.97); border-bottom-color: var(--border); backdrop-filter: blur(8px); }
+nav.scrolled { background: rgba(7,7,7,0.97); border-bottom-color: var(–border); backdrop-filter: blur(8px); }
 .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
-.nav-sigil { width: 32px; height: 32px; opacity: 0.7; }
-.nav-brand { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); }
+.nav-sigil { width: 32px; height: 32px; opacity: 0.8; }
+.nav-brand { font-family: ‘Cinzel’, serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(–gold-lt); }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a { font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
-.nav-links a:hover { color: var(--gold-lt); }
+.nav-links a { font-family: ‘Cinzel’, serif; font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(–muted); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(–gold-lt); }
 .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav-burger span { display: block; width: 22px; height: 1px; background: var(--gold-lt); }
+.nav-burger span { display: block; width: 22px; height: 1px; background: var(–gold-lt); }
 
-/* HERO */
+/* ── HERO ── */
 #inicio {
-  position: relative; min-height: 100vh;
-  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
-  padding-bottom: 8rem; text-align: center; overflow: hidden;
+position: relative; min-height: 100vh;
+display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+padding-bottom: 8rem; text-align: center; overflow: hidden;
 }
 .hero-cover {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(7,7,7,0.4) 0%, rgba(7,7,7,0.05) 25%, rgba(7,7,7,0.05) 55%, rgba(7,7,7,0.88) 80%, rgba(7,7,7,1) 100%),
-    linear-gradient(160deg, #1c0a06 0%, #3a1608 20%, #5a2a0e 40%, #2e1408 65%, #0e0605 100%);
+position: absolute; inset: 0;
+background:
+linear-gradient(to bottom, rgba(7,7,7,0.5) 0%, rgba(7,7,7,0.05) 25%, rgba(7,7,7,0.05) 50%, rgba(7,7,7,0.92) 82%, rgba(7,7,7,1) 100%),
+linear-gradient(160deg, #1c0a06 0%, #3a1608 20%, #5a2a0e 40%, #2e1408 65%, #0e0605 100%);
 }
 .hero-sigil-bg {
-  position: absolute; top: 48%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(72vw, 580px); height: min(72vw, 580px);
-  opacity: 0.055;
-  animation: slowspin 200s linear infinite;
+position: absolute; top: 48%; left: 50%;
+transform: translate(-50%, -50%);
+width: min(72vw, 580px); height: min(72vw, 580px);
+opacity: 0.055;
+animation: slowspin 200s linear infinite;
 }
 @keyframes slowspin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
+from { transform: translate(-50%, -50%) rotate(0deg); }
+to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
-.hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--crimson); margin-bottom: 1.8rem; opacity: 0; animation: rise 1s 0.4s forwards; }
-.hero-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(2rem, 6vw, 5rem); font-weight: 400; color: var(--white); line-height: 1.08; letter-spacing: 0.03em; margin-bottom: 0.6rem; opacity: 0; animation: rise 1s 0.7s forwards; text-shadow: 0 2px 40px rgba(0,0,0,0.9); }
-.hero-title em { font-style: normal; color: var(--glow); text-shadow: 0 0 60px rgba(192,57,43,0.55), 0 2px 40px rgba(0,0,0,0.9); }
-.hero-verse { font-style: italic; font-size: clamp(0.92rem, 1.8vw, 1.1rem); color: var(--dim); max-width: 500px; margin: 1.6rem auto 2.4rem; opacity: 0; animation: rise 1s 1s forwards; line-height: 1.65; }
+.hero-eyebrow { font-family: ‘Cinzel’, serif; font-size: 0.58rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(–crimson); margin-bottom: 1.8rem; opacity: 0; animation: rise 1s 0.4s forwards; }
+.hero-title { font-family: ‘Cinzel Decorative’, serif; font-size: clamp(2rem, 6vw, 5rem); font-weight: 400; color: var(–white); line-height: 1.08; letter-spacing: 0.03em; margin-bottom: 0.6rem; opacity: 0; animation: rise 1s 0.7s forwards; text-shadow: 0 2px 40px rgba(0,0,0,0.9); }
+.hero-title em { font-style: normal; color: var(–glow); text-shadow: 0 0 60px rgba(192,57,43,0.55), 0 2px 40px rgba(0,0,0,0.9); }
+.hero-verse { font-style: italic; font-size: clamp(0.92rem, 1.8vw, 1.15rem); color: var(–dim); max-width: 520px; margin: 1.6rem auto 2.4rem; opacity: 0; animation: rise 1s 1s forwards; line-height: 1.65; }
 .hero-rule { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.4rem; opacity: 0; animation: rise 1s 1.2s forwards; }
-.hero-rule::before, .hero-rule::after { content: ''; width: 65px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); }
-.hero-rule::after { background: linear-gradient(to left, transparent, var(--gold)); }
-.hero-rule-dot { color: var(--gold); font-size: 0.85rem; }
+.hero-rule::before, .hero-rule::after { content: ‘’; width: 65px; height: 1px; background: linear-gradient(to right, transparent, var(–gold)); }
+.hero-rule::after { background: linear-gradient(to left, transparent, var(–gold)); }
+.hero-rule-dot { color: var(–gold); font-size: 0.85rem; }
 .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; opacity: 0; animation: rise 1s 1.4s forwards; }
-.btn-main { font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--white); background: var(--crimson); border: none; padding: 1rem 2.5rem; text-decoration: none; cursor: pointer; transition: background 0.3s, box-shadow 0.3s; }
-.btn-main:hover { background: var(--glow); box-shadow: 0 0 35px rgba(192,57,43,0.45); }
-.btn-outline { font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-lt); background: transparent; border: 1px solid var(--gold); padding: 1rem 2.5rem; text-decoration: none; cursor: pointer; transition: all 0.3s; }
-.btn-outline:hover { background: rgba(138,110,48,0.12); color: var(--white); }
+.btn-main { font-family: ‘Cinzel’, serif; font-size: 0.63rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(–white); background: var(–crimson); border: none; padding: 1rem 2.5rem; text-decoration: none; cursor: pointer; transition: background 0.3s, box-shadow 0.3s; display: inline-block; }
+.btn-main:hover { background: var(–glow); box-shadow: 0 0 35px rgba(192,57,43,0.45); }
+.btn-outline { font-family: ‘Cinzel’, serif; font-size: 0.63rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(–gold-lt); background: transparent; border: 1px solid var(–gold); padding: 1rem 2.5rem; text-decoration: none; cursor: pointer; transition: all 0.3s; display: inline-block; }
+.btn-outline:hover { background: rgba(138,110,48,0.12); color: var(–white); }
 .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; opacity: 0; animation: rise 1s 2s forwards; }
-.scroll-hint span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); }
-.scroll-arrow { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--gold), transparent); animation: pulse-line 2s ease-in-out infinite; }
+.scroll-hint span { font-family: ‘Cinzel’, serif; font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(–muted); }
+.scroll-arrow { width: 1px; height: 36px; background: linear-gradient(to bottom, var(–gold), transparent); animation: pulse-line 2s ease-in-out infinite; }
 @keyframes pulse-line { 0%,100%{opacity:0.3}50%{opacity:1} }
 @keyframes rise { from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)} }
 
-/* STATS */
-.stats-bar { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem; display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; }
+/* ── STATS ── */
+.stats-bar { background: var(–surface); border-top: 1px solid var(–border); border-bottom: 1px solid var(–border); padding: 2.5rem 2rem; display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; }
 .stat { text-align: center; }
-.stat-n { font-family: 'Cinzel Decorative', serif; font-size: 2.1rem; color: var(--white); display: block; line-height: 1; }
-.stat-l { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; display: block; }
+.stat-n { font-family: ‘Cinzel Decorative’, serif; font-size: 2.1rem; color: var(–white); display: block; line-height: 1; }
+.stat-l { font-family: ‘Cinzel’, serif; font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(–muted); margin-top: 0.4rem; display: block; }
 
-/* SHARED */
+/* ── SHARED ── */
 section { padding: 7rem 2rem; }
 .container { max-width: 1060px; margin: 0 auto; }
-.s-label { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--crimson); display: block; margin-bottom: 0.9rem; }
-.s-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(1.5rem, 3.5vw, 2.5rem); font-weight: 400; color: var(--white); line-height: 1.15; margin-bottom: 1.2rem; }
-.gold-bar { width: 50px; height: 1px; background: var(--gold); margin-bottom: 2.5rem; }
+.s-label { font-family: ‘Cinzel’, serif; font-size: 0.56rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(–crimson); display: block; margin-bottom: 0.9rem; }
+.s-title { font-family: ‘Cinzel Decorative’, serif; font-size: clamp(1.5rem, 3.5vw, 2.5rem); font-weight: 400; color: var(–white); line-height: 1.15; margin-bottom: 1.2rem; }
+.gold-bar { width: 50px; height: 1px; background: var(–gold); margin-bottom: 2.5rem; }
 
-/* FILOSOFÍA */
-#filosofia { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; margin-top: 4rem; background: var(--border); }
-.pillar { background: var(--surface); padding: 2.8rem 2.2rem; border-bottom: 2px solid transparent; opacity: 0; transform: translateY(28px); transition: opacity 0.6s, transform 0.6s, border-color 0.3s, background 0.3s; }
+/* ── DOCTRINA ── */
+#doctrina { background: var(–deep); border-top: 1px solid var(–border); border-bottom: 1px solid var(–border); }
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; margin-top: 4rem; background: var(–border); }
+.pillar { background: var(–surface); padding: 2.8rem 2.2rem; border-bottom: 2px solid transparent; opacity: 0; transform: translateY(28px); transition: opacity 0.6s, transform 0.6s, border-color 0.3s, background 0.3s; }
 .pillar.vis { opacity: 1; transform: translateY(0); }
-.pillar:hover { border-bottom-color: var(--crimson); background: #150e0e; }
-.pillar-n { font-family: 'Cinzel Decorative', serif; font-size: 2.8rem; color: var(--border); line-height: 1; margin-bottom: 1.3rem; }
-.pillar h3 { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-lt); font-weight: 400; margin-bottom: 0.9rem; }
-.pillar p { font-size: 0.92rem; color: var(--muted); line-height: 1.85; }
-.group-quote { margin-top: 4rem; padding: 2.8rem; border: 1px solid var(--border); border-left: 3px solid var(--crimson); background: var(--surface); max-width: 660px; }
-.group-quote blockquote { font-style: italic; font-size: 1.08rem; color: var(--light); line-height: 1.8; margin-bottom: 1rem; }
-.group-quote cite { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+.pillar:hover { border-bottom-color: var(–crimson); background: #150e0e; }
+.pillar-n { font-family: ‘Cinzel Decorative’, serif; font-size: 2.8rem; color: var(–border); line-height: 1; margin-bottom: 1.3rem; }
+.pillar h3 { font-family: ‘Cinzel’, serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(–gold-lt); font-weight: 400; margin-bottom: 0.9rem; }
+.pillar p { font-size: 0.92rem; color: var(–muted); line-height: 1.85; }
 
-/* CONTENIDO */
-#contenido { background: var(--black); }
-.content-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
-.content-block p { color: var(--muted); font-size: 0.94rem; margin-bottom: 1.2rem; line-height: 1.9; }
-.content-block p em { color: var(--light); font-style: italic; }
-.tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
-.tag { font-family: 'Cinzel', serif; font-size: 0.53rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 0.3rem 0.75rem; }
+/* ── PROFETA — Cesar Acosta ── */
+#profeta { background: var(–black); }
+.profeta-layout {
+display: grid;
+grid-template-columns: 1fr 1.6fr;
+gap: 6rem;
+align-items: center;
+margin-top: 2rem;
+}
+.profeta-sigil-column { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+.profeta-sigil-frame {
+width: 260px; height: 260px;
+border: 1px solid var(–border);
+display: flex; align-items: center; justify-content: center;
+position: relative;
+background: var(–surface);
+}
+.profeta-sigil-frame::before {
+content: ‘’;
+position: absolute; inset: 8px;
+border: 1px solid var(–border);
+}
+.profeta-sigil-frame::after {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(to right, transparent, var(–crimson), transparent);
+}
+.profeta-sigil-svg { width: 160px; height: 160px; opacity: 0.5; }
+.profeta-title-block { text-align: center; }
+.profeta-title-block .name {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 1.4rem;
+color: var(–white);
+display: block;
+letter-spacing: 0.05em;
+margin-bottom: 0.3rem;
+}
+.profeta-title-block .title {
+font-family: ‘Cinzel’, serif;
+font-size: 0.6rem;
+letter-spacing: 0.35em;
+text-transform: uppercase;
+color: var(–gold-lt);
+display: block;
+}
+.profeta-text p {
+color: var(–muted);
+font-size: 1rem;
+line-height: 1.9;
+margin-bottom: 1.4rem;
+}
+.profeta-text p em { color: var(–light); font-style: italic; }
+.profeta-text p strong { color: var(–white); font-style: normal; font-weight: 400; }
+.profeta-quote {
+margin-top: 2.5rem;
+padding: 2.2rem 2.5rem;
+border: 1px solid var(–border);
+border-left: 3px solid var(–crimson);
+background: var(–surface);
+}
+.profeta-quote blockquote { font-style: italic; font-size: 1.1rem; color: var(–light); line-height: 1.8; margin-bottom: 0.8rem; }
+.profeta-quote cite { font-family: ‘Cinzel’, serif; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(–muted); font-style: normal; }
 
-/* COMUNIDAD */
-#comunidad { background: var(--deep); border-top: 1px solid var(--border); text-align: center; }
-#comunidad .gold-bar { margin-left: auto; margin-right: auto; }
-.join-card { max-width: 580px; margin: 4rem auto 0; background: var(--surface); border: 1px solid var(--border); padding: 3.5rem 2.8rem; position: relative; overflow: hidden; }
-.join-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--crimson), transparent); }
-.join-card p { font-style: italic; color: var(--muted); margin-bottom: 2rem; font-size: 1rem; }
+/* ── CONGREGACIÓN ── */
+#congregacion { background: var(–deep); border-top: 1px solid var(–border); text-align: center; }
+#congregacion .gold-bar { margin-left: auto; margin-right: auto; }
+.join-card { max-width: 600px; margin: 4rem auto 0; background: var(–surface); border: 1px solid var(–border); padding: 3.5rem 2.8rem; position: relative; overflow: hidden; }
+.join-card::before { content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(–crimson), transparent); }
+.join-card p { color: var(–muted); margin-bottom: 2rem; font-size: 1rem; line-height: 1.85; }
 
-/* FOOTER */
-footer { background: var(--black); border-top: 1px solid var(--border); padding: 5rem 2rem 2.5rem; text-align: center; }
+/* ── FOOTER ── */
+footer { background: var(–black); border-top: 1px solid var(–border); padding: 5rem 2rem 2.5rem; text-align: center; }
 .footer-sigil { width: 58px; height: 58px; opacity: 0.2; margin: 0 auto 2rem; display: block; }
-.footer-name { font-family: 'Cinzel Decorative', serif; font-size: 0.95rem; color: var(--gold); letter-spacing: 0.08em; display: block; margin-bottom: 0.5rem; }
-.footer-verse { font-style: italic; color: var(--muted); font-size: 0.84rem; display: block; margin-bottom: 2.5rem; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+.footer-name { font-family: ‘Cinzel Decorative’, serif; font-size: 0.95rem; color: var(–gold); letter-spacing: 0.08em; display: block; margin-bottom: 0.5rem; }
+.footer-verse { font-style: italic; color: var(–muted); font-size: 0.84rem; display: block; margin-bottom: 2.5rem; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 .footer-links { display: flex; justify-content: center; gap: 2.5rem; list-style: none; margin-bottom: 3rem; flex-wrap: wrap; }
-.footer-links a { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
-.footer-links a:hover { color: var(--gold-lt); }
-.footer-copy { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--border); }
+.footer-links a { font-family: ‘Cinzel’, serif; font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(–muted); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(–gold-lt); }
+.footer-copy { font-family: ‘Cinzel’, serif; font-size: 0.58rem; letter-spacing: 0.15em; color: var(–border); }
 
-/* MOBILE */
+/* ── MOBILE ── */
 @media (max-width: 768px) {
-  nav { padding: 1.1rem 1.5rem; }
-  .nav-links { display: none; flex-direction: column; position: fixed; top: 0; right: 0; bottom: 0; width: 65vw; background: var(--deep); border-left: 1px solid var(--border); padding: 5rem 2.5rem 3rem; gap: 2rem; z-index: 700; }
-  .nav-links.open { display: flex; }
-  .nav-links a { font-size: 0.8rem; }
-  .nav-burger { display: flex; }
-  .stats-bar { gap: 2.5rem; }
-  .content-cols { grid-template-columns: 1fr; gap: 2.5rem; }
-  .join-card { padding: 2.5rem 1.5rem; }
-  section { padding: 5rem 1.5rem; }
-  .group-quote { padding: 2rem 1.5rem; }
+nav { padding: 1.1rem 1.5rem; }
+.nav-links { display: none; flex-direction: column; position: fixed; top: 0; right: 0; bottom: 0; width: 65vw; background: var(–deep); border-left: 1px solid var(–border); padding: 5rem 2.5rem 3rem; gap: 2rem; z-index: 700; }
+.nav-links.open { display: flex; }
+.nav-links a { font-size: 0.8rem; }
+.nav-burger { display: flex; }
+.stats-bar { gap: 2.5rem; }
+.profeta-layout { grid-template-columns: 1fr; gap: 3rem; }
+.profeta-sigil-column { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+.profeta-sigil-frame { width: 200px; height: 200px; }
+.join-card { padding: 2.5rem 1.5rem; }
+section { padding: 5rem 1.5rem; }
 }
 </style>
+
 </head>
 <body>
+
+<!-- NAV -->
 
 <nav id="navbar">
   <a href="#inicio" class="nav-logo">
@@ -187,14 +246,16 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     <span class="nav-brand">I.C.S.</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#filosofia">Filosofía</a></li>
-    <li><a href="#contenido">Contenido</a></li>
-    <li><a href="#comunidad">Comunidad</a></li>
+    <li><a href="#doctrina">Doctrina</a></li>
+    <li><a href="#profeta">El Profeta</a></li>
+    <li><a href="#congregacion">Congregación</a></li>
   </ul>
   <button class="nav-burger" id="burger" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- HERO -->
 
 <section id="inicio">
   <div class="hero-cover"></div>
@@ -211,113 +272,150 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   </svg>
 
   <div class="hero-content">
-    <p class="hero-eyebrow">Missouri · Comunidad Hispanohablante · Est. 2021</p>
+    <p class="hero-eyebrow">La Única Iglesia Verdadera · Missouri · Est. 2021</p>
     <h1 class="hero-title">Iglesia Cristiana<br><em>Satánica</em></h1>
     <p class="hero-verse">
       "Venid a mi los que estáis trabajados y cargados<br>y yo os haré descansar."
     </p>
     <div class="hero-rule"><span class="hero-rule-dot">✦</span></div>
     <div class="cta-row">
-      <a href="https://www.facebook.com/share/1RGR8EmxNp/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn-main">Únete en Facebook</a>
-      <a href="#filosofia" class="btn-outline">Nuestra Filosofía</a>
+      <a href="https://www.facebook.com/share/1RGR8EmxNp/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn-main">Unirse a la Congregación</a>
+      <a href="#profeta" class="btn-outline">Conoce al Profeta</a>
     </div>
   </div>
 
   <div class="scroll-hint">
-    <span>Descubrir</span>
+    <span>Descender</span>
     <div class="scroll-arrow"></div>
   </div>
 </section>
 
+<!-- STATS -->
+
 <div class="stats-bar">
-  <div class="stat"><span class="stat-n">912</span><span class="stat-l">Me gusta</span></div>
-  <div class="stat"><span class="stat-n">911</span><span class="stat-l">Seguidores</span></div>
-  <div class="stat"><span class="stat-n">2021</span><span class="stat-l">Fundada</span></div>
-  <div class="stat"><span class="stat-n">∞</span><span class="stat-l">Bienvenidos</span></div>
+  <div class="stat"><span class="stat-n">912</span><span class="stat-l">Almas Reclamadas</span></div>
+  <div class="stat"><span class="stat-n">911</span><span class="stat-l">Fieles Seguidores</span></div>
+  <div class="stat"><span class="stat-n">2021</span><span class="stat-l">Año de la Revelación</span></div>
+  <div class="stat"><span class="stat-n">∞</span><span class="stat-l">La Oscuridad no Tiene Fin</span></div>
 </div>
 
-<section id="filosofia">
+<!-- DOCTRINA -->
+
+<section id="doctrina">
   <div class="container">
-    <span class="s-label">Principios</span>
-    <h2 class="s-title">Nuestra Filosofía</h2>
+    <span class="s-label">Los Mandamientos</span>
+    <h2 class="s-title">La Doctrina Sagrada</h2>
     <div class="gold-bar"></div>
-    <p style="max-width:600px; color:var(--muted); font-style:italic; font-size:1rem; line-height:1.85;">
-      Satán no es un dios ni un ser pensante. Es una imagen simbólica de la fuerza que controla y mantiene el equilibrio de todo el universo. Vivir como satanistas quiere decir vivir según las reglas de la naturaleza — buscando satisfacción material, emocional e intelectual.
+    <p style="max-width:620px; color:var(--muted); font-style:italic; font-size:1rem; line-height:1.9;">
+      Satán no es una figura de adoración pasiva. Es la fuerza primordial que gobierna el universo — la voluntad, el deseo, el poder sin disculpa. Vivir bajo su estandarte es reclamar lo que siempre fue tuyo por derecho: tu mente, tu carne, tu destino.
     </p>
     <div class="pillars">
       <div class="pillar">
         <div class="pillar-n">I</div>
-        <h3>El Yo Primero</h3>
-        <p>No te arrodilles ante nadie. Eres la única autoridad sobre tu vida, tu cuerpo y tus decisiones. La devoción comienza contigo.</p>
+        <h3>La Soberanía del Yo</h3>
+        <p>No existe autoridad superior a la tuya sobre tu propia existencia. Eres el dios de tu propio universo. Quien te diga lo contrario te encadena con su miedo.</p>
       </div>
       <div class="pillar">
         <div class="pillar-n">II</div>
-        <h3>Libertad Real</h3>
-        <p>Tal vez no puedas cambiar de dónde vienes. Pero sí puedes elegir hacia dónde ir. Elige ser libre. Elige no ser parte de la manada.</p>
+        <h3>El Rechazo del Rebaño</h3>
+        <p>La manada es el instrumento del control. El satanista camina solo por elección — no por soledad, sino por supremacía. La mediocridad colectiva no te merece.</p>
       </div>
       <div class="pillar">
         <div class="pillar-n">III</div>
-        <h3>Sin Dogma</h3>
-        <p>Rechazamos la fe ciega y el miedo como herramientas de control. La razón, la curiosidad y el cuestionamiento son actos sagrados.</p>
+        <h3>La Justicia de Fuego</h3>
+        <p>No ofrecemos la otra mejilla. La misericordia se otorga a quienes la merecen. A los demás: la oscuridad que sembraron se les devuelve multiplicada.</p>
       </div>
       <div class="pillar">
         <div class="pillar-n">IV</div>
-        <h3>Hermandad</h3>
-        <p>Una comunidad para los que no encajan en ninguna otra. Sin juicios. Sin miedo. Solo verdad compartida entre quienes buscan lo mismo.</p>
+        <h3>La Tierra Prometida</h3>
+        <p>No esperamos redención en otra vida. El paraíso se construye aquí, en este plano, con estas manos. Lo que no conquistas en vida, no lo herederás en la muerte.</p>
       </div>
     </div>
-    <div class="group-quote">
+  </div>
+</section>
+
+<!-- EL PROFETA -->
+
+<section id="profeta">
+  <div class="container">
+    <span class="s-label">El Elegido</span>
+    <h2 class="s-title">Cesar Acosta</h2>
+    <div class="gold-bar"></div>
+
+```
+<div class="profeta-layout">
+  <div class="profeta-sigil-column">
+    <div class="profeta-sigil-frame">
+      <svg class="profeta-sigil-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <circle cx="50" cy="50" r="46" stroke="#b8944e" stroke-width="1"/>
+        <circle cx="50" cy="50" r="32" stroke="#b8944e" stroke-width="0.6"/>
+        <polygon points="50,8 88,72 12,72" stroke="#c0392b" stroke-width="1"/>
+        <polygon points="50,92 12,28 88,28" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="50" cy="50" r="5" stroke="#b8944e" stroke-width="0.8"/>
+        <circle cx="50" cy="10" r="7" stroke="#b8944e" stroke-width="0.6"/>
+        <circle cx="15" cy="71" r="7" stroke="#b8944e" stroke-width="0.6"/>
+        <circle cx="85" cy="71" r="7" stroke="#b8944e" stroke-width="0.6"/>
+        <text x="50" y="54" text-anchor="middle" font-family="serif" font-size="6" fill="#8a6e30" letter-spacing="1">CESAR</text>
+      </svg>
+    </div>
+    <div class="profeta-title-block">
+      <span class="name">Cesar Acosta</span>
+      <span class="title">Fundador · Arquitecto · Sumo Sacerdote</span>
+    </div>
+  </div>
+
+  <div class="profeta-text">
+    <p>
+      En el año 2021, cuando las tinieblas aún buscaban su voz en español, <em>un hombre escuchó el llamado</em>. No fue un susurro. Fue el rugido inconfundible del Señor Oscuro atravesando el silencio de los que habían sido ignorados demasiado tiempo.
+    </p>
+    <p>
+      <strong>Cesar Acosta</strong> no eligió este camino. Este camino lo eligió a él. Fundador, arquitecto y líder espiritual de la Iglesia Cristiana Satánica, Acosta comprendió lo que nadie más había tenido la visión — ni el valor — de entender: que el rebaño hispanohablante del Señor Oscuro no tenía pastor. Que millones de almas buscaban en la oscuridad sin encontrar una mano que las guiara.
+    </p>
+    <p>
+      Esa mano es la suya.
+    </p>
+    <p>
+      Bajo su guía, la congregación ha crecido desde las sombras hasta convertirse en <em>la comunidad satánica hispanohablante más poderosa del mundo digital</em>. No porque Acosta busque el poder. Sino porque el poder lo encontró a él primero, lo reconoció, y no lo soltó.
+    </p>
+    <p>
+      Su misión es simple y absoluta: <strong>llevar al rebaño del Señor Oscuro a la tierra prometida</strong>. No la tierra prometida de los mansos y los sumisos. La tierra prometida de los libres. De los que se atrevieron a mirar a la oscuridad a los ojos y no parpadearon.
+    </p>
+
+    <div class="profeta-quote">
       <blockquote>"Tal vez no pueda cambiar de dónde vengo, pero sí puedo elegir hacia dónde ir. Elijo ser libre — elegí no ser parte de la manada."</blockquote>
-      <cite>— Ivan Sotelo · Publicado en el grupo</cite>
+      <cite>— La doctrina viviente de Cesar Acosta</cite>
     </div>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
-<section id="contenido">
+<!-- CONGREGACIÓN -->
+
+<section id="congregacion">
   <div class="container">
-    <span class="s-label">El Grupo</span>
-    <h2 class="s-title">¿Qué Encontrarás Aquí?</h2>
+    <span class="s-label">El Llamado</span>
+    <h2 class="s-title">La Congregación te Espera</h2>
     <div class="gold-bar"></div>
-    <div class="content-cols">
-      <div class="content-block">
-        <p>Comenzamos como una broma. Nos quedamos por la comunidad. Hoy somos un espacio donde hispanohablantes de todo el mundo se reúnen para explorar la filosofía satánica sin el filtro del idioma ni el peso del juicio.</p>
-        <p>Aquí encontrarás <em>debate filosófico, humor oscuro, arte subversivo</em> y la ocasional pregunta existencial a las 3am. Todo bienvenido.</p>
-        <p>No necesitas creer en nada sobrenatural. Solo necesitas estar dispuesto a pensar por ti mismo.</p>
-        <div class="tag-list">
-          <span class="tag">Filosofía</span>
-          <span class="tag">Memes</span>
-          <span class="tag">Arte Oscuro</span>
-          <span class="tag">Debate</span>
-          <span class="tag">Comunidad</span>
-          <span class="tag">En Español</span>
-        </div>
-      </div>
-      <div class="content-block">
-        <p><em>"Si el diablo castiga a los malos... ¿el diablo es bueno?"</em> — el tipo de pregunta que nos mantiene despiertos y publicando a las 2am.</p>
-        <p>Compartimos desde arte sacro subvertido hasta reflexiones sobre la naturaleza del bien y el mal. Desde memes filosóficos hasta conversaciones serias sobre espiritualidad alternativa en español.</p>
-        <p>Este contenido en español casi no existe en ningún otro lado. Eso cambia aquí.</p>
-        <div class="tag-list">
-          <span class="tag">Ocultismo</span>
-          <span class="tag">Lucifer</span>
-          <span class="tag">Anti-Dogma</span>
-          <span class="tag">Libre Pensamiento</span>
-        </div>
-      </div>
-    </div>
+
+```
+<div class="join-card">
+  <p>
+    Más de 900 almas han respondido al llamado del Profeta. Han abandonado el rebaño. Han cruzado al otro lado. La pregunta no es si perteneces aquí. La pregunta es cuánto tiempo más vas a ignorar lo que ya sabes.
+  </p>
+  <p style="font-style:italic; font-size:0.9rem;">
+    El Señor Oscuro no llama dos veces.
+  </p>
+  <a href="https://www.facebook.com/share/1RGR8EmxNp/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn-main">Responder al Llamado</a>
+</div>
+```
+
   </div>
 </section>
 
-<section id="comunidad">
-  <div class="container">
-    <span class="s-label">Únete</span>
-    <h2 class="s-title">La Comunidad te Espera</h2>
-    <div class="gold-bar"></div>
-    <div class="join-card">
-      <p>Más de 900 almas que decidieron pensar diferente. El grupo crece porque la gente nos encuentra buscando lo que nadie más ofrece en español. Ahora te toca a ti.</p>
-      <a href="https://www.facebook.com/share/1RGR8EmxNp/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn-main">Unirse al Grupo</a>
-    </div>
-  </div>
-</section>
+<!-- FOOTER -->
 
 <footer>
   <svg class="footer-sigil" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -333,12 +431,12 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   <span class="footer-name">Iglesia Cristiana Satánica</span>
   <span class="footer-verse">"Venid a mi los que estáis trabajados y cargados y yo os haré descansar."</span>
   <ul class="footer-links">
-    <li><a href="#filosofia">Filosofía</a></li>
-    <li><a href="#contenido">Contenido</a></li>
-    <li><a href="#comunidad">Comunidad</a></li>
+    <li><a href="#doctrina">Doctrina</a></li>
+    <li><a href="#profeta">El Profeta</a></li>
+    <li><a href="#congregacion">Congregación</a></li>
     <li><a href="https://www.facebook.com/share/1RGR8EmxNp/?mibextid=wwXIfr" target="_blank">Facebook</a></li>
   </ul>
-  <p class="footer-copy">© 2026 Iglesia Cristiana Satánica · Missouri · Todos los derechos reservados</p>
+  <p class="footer-copy">© 2026 Iglesia Cristiana Satánica · Fundada por Cesar Acosta · Missouri</p>
 </footer>
 
 <script>
@@ -349,9 +447,12 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   burger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 110); observer.unobserve(e.target); } });
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 110); observer.unobserve(e.target); }
+    });
   }, { threshold: 0.12 });
   document.querySelectorAll('.pillar').forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
