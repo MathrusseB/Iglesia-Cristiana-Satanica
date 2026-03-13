@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Iglesia Cristiana Satánica — Reverendo Cesar Acosta</title>
+<meta name="description" content="La congregación hispanohablante del Señor Oscuro. Fundada en 2021 por el Reverendo Cesar Acosta. Satanismo en español, doctrina, sermones y comunidad.">
+<meta name="keywords" content="satanismo en español, iglesia satánica hispana, satanismo latinoamerica, iglesia cristiana satanica, reverendo cesar acosta, satanismo mexico, satanismo colombia, profecías satánicas, biblia satánica español">
+<meta name="theme-color" content="#090909">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="I.C.S.">
+<meta property="og:title" content="Iglesia Cristiana Satánica">
+<meta property="og:description" content="La congregación hispanohablante del Señor Oscuro. Fundada por el Reverendo Cesar Acosta.">
+<meta property="og:type" content="website">
+<link rel="manifest" id="ics-manifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<style>
+/* ══════════════════════════════════════════
+   DESIGN TOKENS
+   ══════════════════════════════════════════ */
+:root {
+  /* Backgrounds */
+  --bg:        #090909;
+  --surface:   #141414;
+  --surface-2: #1C1C1C;
+  --border:    #282828;
+  --border-lt: #323232;
+  /* Text */
+  --text-primary: #F5F5F0;
+  --text-body:    #909090;
+  --text-muted:   #484848;
+  --text-dim:     #303030;
+  /* Accent — moonstone silver-warm */
+  --accent:    #C8C0A8;
+  --accent-lt: #E0D8C0;
+  --accent-dk: #908870;
+  /* Signal — sulfur yellow */
+  --signal:    #D4C050;
+  --signal-lt: #E8D870;
+  --signal-dk: #806010;
+  --signal-glow: rgba(212,192,80,0.18);
+  /* Semantic */
+  --ink: #090909;
+  /* Spacing scale */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+  /* Type scale */
+  --text-xs:  0.65rem;
+  --text-sm:  0.78rem;
+  --text-base: 1rem;
+  --text-lg:  1.2rem;
+  --text-xl:  1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.8rem;
+  --text-4xl: 3.8rem;
+  --text-hero: clamp(3rem, 10vw, 7rem);
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+  /* Transitions */
+  --trans-fast: 0.2s var(--ease-out-expo);
+  --trans-mid:  0.5s var(--ease-out-expo);
+  --trans-slow: 0.9s var(--ease-out-expo);
+  /* Z-index layers */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-modal:   500;
+  --z-cursor:  9000;
+  --z-nav:     800;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: var(--text-base);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── GRAIN TEXTURE — full page overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--signal-dk);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--signal);
+}
+
+/* ── SELECTION ── */
+::selection {
+  background: var(--signal-dk);
+  color: var(--text-primary);
+}
+
+/* ── CUSTOM CURSOR — desktop only ── */
+@media (hover: hover) and (pointer: fine) {
+  body { cursor: none; }
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    transition: transform 0.2s var(--ease-out-expo),
+                opacity 0.2s ease;
+  }
+  .cursor.hovering svg {
+    transform: scale(2.2);
+    opacity: 1;
+  }
+  .cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--signal);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: calc(var(--z-cursor) - 1);
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    transition: transform 0.08s linear;
+  }
+}
+
+/* ── BASE TYPOGRAPHY ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'UnifrakturMaguntia', serif;
+  color: var(--text-primary);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+p {
+  font-family: 'IM Fell English', Georgia, serif;
+  color: var(--text-body);
+  line-height: 1.85;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+input, select, textarea {
+  font: inherit;
+}
+ul, ol {
+  list-style: none;
+}
+
+/* ── UTILITY CLASSES — used across all chunks ── */
+
+/* Label / eyebrow text */
+.label {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--signal);
+  display: block;
+}
+
+/* Section title */
+.section-title {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+/* Gold rule ornament */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin: var(--sp-6) 0;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-dk));
+}
+.ornament::after {
+  background: linear-gradient(to left, transparent, var(--accent-dk));
+}
+.ornament span {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-sm);
+  color: var(--accent-dk);
+  letter-spacing: 0.3em;
+  white-space: nowrap;
+}
+
+/* Container */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--sp-8);
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--sp-6);
+  }
+}
+
+/* Section wrapper */
+.section {
+  padding: var(--sp-32) 0;
+}
+@media (max-width: 768px) {
+  .section {
+    padding: var(--sp-24) 0;
+  }
+}
+
+/* Reveal animation base states — GSAP will toggle .is-visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(4px);
+  transition:
+    opacity var(--trans-slow),
+    transform var(--trans-slow),
+    filter var(--trans-slow);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Stagger delays for reveal children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
+}
+.reveal-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+.reveal-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.1s; }
+.reveal-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.2s; }
+.reveal-stagger.is-visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.3s; }
+.reveal-stagger.is-visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.4s; }
+.reveal-stagger.is-visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.5s; }
+
+/* Button base styles */
+.btn {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: var(--sp-4) var(--sp-8);
+  transition: all var(--trans-mid);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--signal-dk);
+  color: var(--text-primary);
+  border: 1px solid var(--signal-dk);
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--signal);
+  transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.btn-primary:hover::before { transform: translateX(0); }
+.btn-primary:hover { color: var(--bg); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--border-lt);
+}
+.btn-outline:hover {
+  border-color: var(--accent-dk);
+  color: var(--text-primary);
+  background: rgba(200,192,168,0.06);
+}
+
+/* Clip-path reveal utility — used by multiple sections */
+.clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.9s var(--ease-out-expo);
+}
+.clip-reveal.is-visible {
+  clip-path: inset(0% 0 0 0);
+}
+
+/* Horizontal rule with signal color */
+.signal-rule {
+  width: 48px;
+  height: 1px;
+  background: var(--signal-dk);
+  display: block;
+}
+
+/* Surface card base */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  position: relative;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-dk), transparent);
+  opacity: 0;
+  transition: opacity var(--trans-mid);
+}
+.card:hover::before { opacity: 1; }
+</style>
