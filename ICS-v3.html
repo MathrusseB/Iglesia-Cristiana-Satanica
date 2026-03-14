@@ -1306,6 +1306,179 @@ ul, ol {
     margin: var(--sp-4) auto 0;
   }
 }
+
+/* ══════════════════════════════
+   LAS OBRAS
+══════════════════════════════ */
+.obras {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.obras::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-lt),
+    transparent
+  );
+}
+.obras-header {
+  text-align: center;
+  margin-bottom: var(--sp-16);
+}
+.obras-header .label {
+  margin-bottom: var(--sp-4);
+}
+.obras-header .section-title {
+  margin-bottom: var(--sp-4);
+}
+.obras-intro {
+  max-width: 560px;
+  margin: 0 auto;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  text-align: center;
+}
+.obras-intro strong {
+  color: var(--text-body);
+  font-style: normal;
+}
+/* Books grid */
+.books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+@media (max-width: 900px) {
+  .books {
+    grid-template-columns: 1fr;
+  }
+}
+/* Individual book card */
+.book {
+  background: var(--surface);
+  padding: var(--sp-12) var(--sp-8);
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--trans-mid),
+    transform var(--trans-mid);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+/* Top accent — hidden until hover */
+.book::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--signal-dk),
+    transparent
+  );
+  transform: scaleX(0);
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.book:hover {
+  background: var(--surface-2);
+}
+.book:hover::before {
+  transform: scaleX(1);
+}
+/* Ambient glow on hover */
+.book::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    var(--signal-glow),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--trans-mid);
+  pointer-events: none;
+}
+.book:hover::after {
+  opacity: 1;
+}
+/* Volume badge */
+.book-vol {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--signal-dk);
+  display: block;
+  margin-bottom: var(--sp-6);
+}
+/* Book title */
+.book-title {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: var(--sp-6);
+  display: block;
+}
+/* Description */
+.book-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: var(--sp-6);
+}
+/* Excerpt — indented italic quote */
+.book-excerpt {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border-left: 2px solid var(--border-lt);
+  padding-left: var(--sp-4);
+  line-height: 1.8;
+  margin-bottom: var(--sp-8);
+  transition: border-color var(--trans-mid),
+              color var(--trans-mid);
+}
+.book:hover .book-excerpt {
+  border-left-color: var(--signal-dk);
+  color: var(--text-muted);
+}
+/* Release status */
+.book-status {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-dk);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.book-status::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--signal-dk);
+  flex-shrink: 0;
+}
+/* Stagger reveal delays */
+.book:nth-child(1) { transition-delay: 0s; }
+.book:nth-child(2) { transition-delay: 0.1s; }
+.book:nth-child(3) { transition-delay: 0.2s; }
 </style>
 
 <body>
