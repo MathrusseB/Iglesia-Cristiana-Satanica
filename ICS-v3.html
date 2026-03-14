@@ -1064,6 +1064,248 @@ ul, ol {
   );
   margin: 0;
 }
+
+/* ══════════════════════════════
+   PROFETA SECTION
+══════════════════════════════ */
+.profeta {
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+/* Ambient left-side glow */
+.profeta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 80% 60% at 0% 50%,
+    rgba(212,192,80,0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+/* ── STICKY SPLIT LAYOUT ── */
+.profeta-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--sp-16);
+  align-items: start;
+  position: relative;
+}
+/* Left column — sticky on desktop */
+.profeta-left {
+  position: sticky;
+  top: calc(80px + var(--sp-8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-8);
+}
+/* Right column — scrolls normally */
+.profeta-right {
+  padding: var(--sp-8) 0 var(--sp-24);
+}
+/* ── SIGIL FRAME ── */
+.profeta-frame {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Double border inset effect */
+.profeta-frame::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--border);
+}
+/* Signal top accent line */
+.profeta-frame::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--signal-dk),
+    transparent
+  );
+}
+.profeta-sigil {
+  width: 170px;
+  height: 170px;
+  opacity: 0.5;
+  transition: opacity var(--trans-mid);
+}
+.profeta-frame:hover .profeta-sigil {
+  opacity: 0.75;
+}
+/* ── NAMEPLATE ── */
+.profeta-nameplate {
+  text-align: center;
+  width: 100%;
+}
+.profeta-name {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  display: block;
+  line-height: 1.1;
+  margin-bottom: var(--sp-2);
+  letter-spacing: 0.03em;
+}
+.profeta-rank {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-dk);
+  display: block;
+  line-height: 1.8;
+}
+/* Nameplate rule */
+.profeta-nameplate-rule {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--signal-dk),
+    transparent
+  );
+  margin: var(--sp-4) auto 0;
+}
+/* ── BIOGRAPHY ── */
+.profeta-right .label {
+  margin-bottom: var(--sp-6);
+}
+.profeta-right .section-title {
+  margin-bottom: var(--sp-6);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+}
+.profeta-bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+.profeta-bio p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.95;
+}
+.profeta-bio p em {
+  color: var(--text-body);
+  font-style: italic;
+}
+.profeta-bio p strong {
+  color: var(--text-primary);
+  font-style: normal;
+  font-weight: 400;
+}
+/* ── PULLQUOTE ── */
+.profeta-pullquote {
+  margin-top: var(--sp-8);
+  padding: var(--sp-8) var(--sp-8) var(--sp-8) var(--sp-10);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--signal-dk);
+  position: relative;
+  overflow: hidden;
+}
+/* Large decorative opening quote mark */
+.profeta-pullquote::before {
+  content: '\201C';
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 8rem;
+  color: var(--surface-2);
+  position: absolute;
+  top: -1.5rem;
+  left: var(--sp-4);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.profeta-pullquote blockquote {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-body);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.profeta-pullquote cite {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-style: normal;
+  display: block;
+  margin-top: var(--sp-4);
+  position: relative;
+  z-index: 1;
+}
+/* ── MOBILE OVERRIDE ── */
+@media (max-width: 900px) {
+  .profeta-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-12);
+  }
+  .profeta-left {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--sp-6);
+    padding-bottom: var(--sp-8);
+    border-bottom: 1px solid var(--border);
+  }
+  .profeta-frame {
+    width: 200px;
+    height: 200px;
+  }
+  .profeta-sigil {
+    width: 130px;
+    height: 130px;
+  }
+  .profeta-nameplate {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .profeta-nameplate-rule {
+    margin: var(--sp-4) 0 0;
+  }
+  .profeta-right {
+    padding: 0 0 var(--sp-16);
+  }
+  .profeta-pullquote {
+    padding-left: var(--sp-8);
+  }
+}
+@media (max-width: 540px) {
+  .profeta-left {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profeta-nameplate {
+    text-align: center;
+  }
+  .profeta-nameplate-rule {
+    margin: var(--sp-4) auto 0;
+  }
+}
 </style>
 
 <body>
@@ -1329,6 +1571,119 @@ ul, ol {
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Section transition -->
+<div class="section-strip" aria-hidden="true"></div>
+
+<!-- ── PROFETA ── -->
+<section class="profeta section" id="profeta"
+  aria-label="El Reverendo Cesar Acosta">
+  <div class="container">
+    <div class="profeta-grid">
+      <!-- LEFT — sticky sigil + nameplate -->
+      <div class="profeta-left reveal">
+        <div class="profeta-frame">
+          <svg class="profeta-sigil"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <circle cx="50" cy="50" r="46"
+              stroke="#C8C0A8" stroke-width="1"/>
+            <circle cx="50" cy="50" r="32"
+              stroke="#C8C0A8" stroke-width="0.6"/>
+            <polygon points="50,8 88,72 12,72"
+              stroke="#D4C050" stroke-width="1"/>
+            <polygon points="50,92 12,28 88,28"
+              stroke="#D4C050" stroke-width="1"/>
+            <circle cx="50" cy="50" r="6"
+              stroke="#C8C0A8" stroke-width="0.8"/>
+            <circle cx="50" cy="10" r="6"
+              stroke="#C8C0A8" stroke-width="0.6"/>
+            <circle cx="15" cy="71" r="6"
+              stroke="#C8C0A8" stroke-width="0.6"/>
+            <circle cx="85" cy="71" r="6"
+              stroke="#C8C0A8" stroke-width="0.6"/>
+            <text x="50" y="54"
+              text-anchor="middle"
+              font-family="serif"
+              font-size="5.5"
+              fill="#806010"
+              letter-spacing="1.5">CESAR</text>
+          </svg>
+        </div>
+        <div class="profeta-nameplate">
+          <span class="profeta-name">Cesar Acosta</span>
+          <span class="profeta-rank">
+            Reverendo · Fundador<br>
+            Sumo Sacerdote · I.C.S.<br>
+            Est. Missouri 2021
+          </span>
+          <div class="profeta-nameplate-rule"
+            aria-hidden="true"></div>
+        </div>
+      </div>
+      <!-- RIGHT — scrolling biography -->
+      <div class="profeta-right">
+        <span class="label reveal">El Elegido por las Tinieblas</span>
+        <h2 class="section-title reveal">
+          El Reverendo<br>Cesar Acosta
+        </h2>
+        <div class="signal-rule reveal"
+          aria-hidden="true"></div>
+        <div class="profeta-bio">
+          <p class="reveal">
+            En el año 2021, cuando las tinieblas aún buscaban su voz
+            en español, <em>un hombre escuchó el llamado</em>. No fue
+            un susurro. Fue el rugido inconfundible del Señor Oscuro
+            atravesando el silencio de quienes habían sido ignorados
+            demasiado tiempo.
+          </p>
+          <p class="reveal">
+            <strong>El Reverendo Cesar Acosta</strong> no eligió este
+            camino. Este camino lo eligió a él. Fundador y primer Sumo
+            Sacerdote de la Iglesia Cristiana Satánica — la primera de
+            su nombre — Acosta comprendió lo que nadie más había tenido
+            ni la visión ni el valor de entender: que el rebaño
+            hispanohablante del Señor Oscuro no tenía pastor. Que
+            millones de almas buscaban en la oscuridad sin encontrar
+            una mano que las guiara.
+          </p>
+          <p class="reveal">
+            Esa mano es la suya.
+          </p>
+          <p class="reveal">
+            Bajo su doctrina, la congregación ha crecido desde las
+            sombras del Missouri profundo hasta convertirse en
+            <em>la comunidad satánica hispanohablante más influyente
+            del mundo digital</em>. Próximamente, el Reverendo Acosta
+            lanzará una serie de tres tomos sagrados, sermones en vivo
+            por YouTube y Zoom, y materiales de enseñanza disponibles
+            solo para los fieles consagrados.
+          </p>
+          <p class="reveal">
+            Su misión es simple y absoluta:
+            <strong>llevar al rebaño del Señor Oscuro a la tierra
+            prometida</strong>. No la tierra prometida de los mansos.
+            La tierra prometida de los que se atrevieron a mirar a
+            la oscuridad a los ojos — y no parpadearon.
+          </p>
+          <div class="profeta-pullquote reveal">
+            <blockquote>
+              "No puedo cambiar de dónde vengo. Pero sí puedo elegir
+              hacia dónde va mi rebaño. Elijo llevarlos a la libertad
+              — lejos de toda manada que los encierre."
+            </blockquote>
+            <cite>— Reverendo Cesar Acosta
+              · Doctrina Viva de la I.C.S.</cite>
+          </div>
+        </div>
+      </div>
+      <!-- end profeta-right -->
+    </div>
+    <!-- end profeta-grid -->
   </div>
 </section>
 
