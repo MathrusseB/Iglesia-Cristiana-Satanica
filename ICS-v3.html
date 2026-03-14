@@ -775,6 +775,295 @@ ul, ol {
   .hero-cta-row { flex-direction: column; align-items: center; }
   .hero-cta-row .btn { width: 100%; max-width: 280px; text-align: center; }
 }
+
+/* ══════════════════════════════
+   STATS BAR
+══════════════════════════════ */
+.stats-bar {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--sp-8) var(--sp-8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-16);
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.stats-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--signal-dk),
+    transparent
+  );
+}
+.stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.stat-number {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  line-height: 1;
+  display: block;
+  letter-spacing: 0.02em;
+}
+.stat-number.signal {
+  color: var(--signal);
+  text-shadow: 0 0 40px rgba(212,192,80,0.2);
+}
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+}
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--border-lt),
+    transparent
+  );
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .stats-bar {
+    gap: var(--sp-8);
+    padding: var(--sp-8) var(--sp-6);
+  }
+  .stat-divider {
+    display: none;
+  }
+  .stat {
+    min-width: 120px;
+  }
+}
+
+/* ══════════════════════════════
+   MARQUEE TICKER
+══════════════════════════════ */
+.marquee-wrap {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: var(--sp-3) 0;
+  overflow: hidden;
+  position: relative;
+}
+.marquee-wrap::before,
+.marquee-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+@media (max-width: 768px) {
+  .marquee-track {
+    animation-duration: 50s;
+  }
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  padding: 0 var(--sp-6);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.marquee-text {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.marquee-text.accent {
+  color: var(--signal-dk);
+}
+.marquee-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--signal-dk);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════
+   DOCTRINA
+══════════════════════════════ */
+.doctrina {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+/* Ambient radial behind section */
+.doctrina::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    ellipse,
+    rgba(212,192,80,0.025) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.doctrina-header {
+  text-align: center;
+  margin-bottom: var(--sp-16);
+  position: relative;
+  z-index: 1;
+}
+.doctrina-header .label {
+  margin-bottom: var(--sp-4);
+}
+.doctrina-header .section-title {
+  margin-bottom: var(--sp-4);
+}
+.doctrina-intro {
+  max-width: 580px;
+  margin: 0 auto;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  text-align: center;
+}
+/* Pillars grid */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+  margin-top: var(--sp-16);
+}
+@media (max-width: 1024px) {
+  .pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+}
+.pillar {
+  background: var(--bg);
+  padding: var(--sp-12) var(--sp-8);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--trans-mid);
+}
+.pillar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--signal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.pillar:hover {
+  background: var(--surface);
+}
+.pillar:hover::after {
+  transform: scaleX(1);
+}
+/* Large background numeral */
+.pillar-numeral {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: 6rem;
+  color: var(--surface-2);
+  line-height: 1;
+  display: block;
+  margin-bottom: var(--sp-4);
+  transition: color var(--trans-mid);
+  user-select: none;
+}
+.pillar:hover .pillar-numeral {
+  color: var(--border-lt);
+}
+.pillar-name {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: var(--sp-4);
+}
+.pillar-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+/* Reveal with stagger delay per pillar */
+.pillar:nth-child(1) { transition-delay: 0s; }
+.pillar:nth-child(2) { transition-delay: 0.08s; }
+.pillar:nth-child(3) { transition-delay: 0.16s; }
+.pillar:nth-child(4) { transition-delay: 0.24s; }
+
+/* ══════════════════════════════
+   SECTION TRANSITION STRIP
+   (reusable between sections)
+══════════════════════════════ */
+.section-strip {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-lt),
+    transparent
+  );
+  margin: 0;
+}
 </style>
 
 <body>
@@ -890,3 +1179,158 @@ ul, ol {
     <div class="hero-scroll-line"></div>
   </div>
 </section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar" role="region" aria-label="Estadísticas de la congregación">
+  <div class="stat reveal">
+    <span class="stat-number" data-count="912">912</span>
+    <span class="stat-label">Almas Reclamadas</span>
+  </div>
+  <div class="stat-divider" aria-hidden="true"></div>
+  <div class="stat reveal">
+    <span class="stat-number" data-count="911">911</span>
+    <span class="stat-label">Fieles Consagrados</span>
+  </div>
+  <div class="stat-divider" aria-hidden="true"></div>
+  <div class="stat reveal">
+    <span class="stat-number signal">2021</span>
+    <span class="stat-label">Año de la Revelación</span>
+  </div>
+  <div class="stat-divider" aria-hidden="true"></div>
+  <div class="stat reveal">
+    <span class="stat-number signal">3</span>
+    <span class="stat-label">Tomos Sagrados · En Preparación</span>
+  </div>
+</div>
+
+<!-- ── MARQUEE TICKER ── -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- Set A — duplicated immediately after for seamless loop -->
+    <div class="marquee-item">
+      <span class="marquee-text accent">Noche de Walpurgis</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">30 de Abril · 2026</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text accent">Reverendo Cesar Acosta</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">Sermones · Libros · Membresía</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text accent">Iglesia Cristiana Satánica</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">Missouri · Est. 2021</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text accent">✦ La Única Iglesia Verdadera ✦</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">Satanismo en Español</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <!-- Set B — exact duplicate for seamless infinite loop -->
+    <div class="marquee-item">
+      <span class="marquee-text accent">Noche de Walpurgis</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">30 de Abril · 2026</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text accent">Reverendo Cesar Acosta</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">Sermones · Libros · Membresía</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text accent">Iglesia Cristiana Satánica</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">Missouri · Est. 2021</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text accent">✦ La Única Iglesia Verdadera ✦</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span class="marquee-text">Satanismo en Español</span>
+      <span class="marquee-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ── DOCTRINA ── -->
+<section class="doctrina section" id="doctrina" aria-label="La Doctrina Sagrada">
+  <div class="container">
+    <div class="doctrina-header reveal">
+      <span class="label">Los Mandamientos del Señor Oscuro</span>
+      <h2 class="section-title">La Doctrina Sagrada</h2>
+      <div class="ornament">
+        <span>✦</span>
+      </div>
+      <p class="doctrina-intro">
+        Satán no es una figura de adoración pasiva. Es la fuerza primordial
+        que antecede a todos los dioses — la voluntad sin disculpa, el deseo
+        sin vergüenza, el poder reclamado por derecho propio.
+        <em>Vivir bajo su estandarte es declarar: yo soy suficiente.</em>
+      </p>
+    </div>
+    <div class="pillars reveal-stagger">
+      <div class="pillar">
+        <span class="pillar-numeral" aria-hidden="true">I</span>
+        <span class="pillar-name">La Soberanía del Yo</span>
+        <p class="pillar-text">
+          No existe autoridad superior a la tuya sobre tu propia existencia.
+          Eres el dios de tu universo. Quien te diga lo contrario te encadena
+          con su miedo disfrazado de virtud.
+        </p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-numeral" aria-hidden="true">II</span>
+        <span class="pillar-name">El Rechazo del Rebaño</span>
+        <p class="pillar-text">
+          La manada es el instrumento del control eterno. El satanista camina
+          solo por elección — no por soledad, sino por supremacía. La
+          mediocridad colectiva no te merece ni te puede contener.
+        </p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-numeral" aria-hidden="true">III</span>
+        <span class="pillar-name">La Justicia de Fuego</span>
+        <p class="pillar-text">
+          No ofrecemos la otra mejilla. La compasión se otorga a quienes la
+          merecen. Al resto: la oscuridad que sembraron retorna multiplicada.
+          Esta es la ley inmutable del universo.
+        </p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-numeral" aria-hidden="true">IV</span>
+        <span class="pillar-name">La Tierra Prometida</span>
+        <p class="pillar-text">
+          No esperamos redención póstuma. El paraíso se conquista aquí, con
+          estas manos, en este plano. Lo que no reclamas en vida no lo
+          heredarás jamás.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section transition -->
+<div class="section-strip" aria-hidden="true"></div>
