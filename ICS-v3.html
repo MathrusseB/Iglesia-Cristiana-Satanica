@@ -1479,6 +1479,285 @@ ul, ol {
 .book:nth-child(1) { transition-delay: 0s; }
 .book:nth-child(2) { transition-delay: 0.1s; }
 .book:nth-child(3) { transition-delay: 0.2s; }
+
+/* ══════════════════════════════
+   SERMONES / BLOG
+══════════════════════════════ */
+.sermones {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.sermones-header {
+  text-align: center;
+  margin-bottom: var(--sp-16);
+}
+.sermones-header .label {
+  margin-bottom: var(--sp-4);
+}
+/* Blog grid — 2 col desktop, 1 col mobile */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Individual blog card */
+.blog-card {
+  background: var(--bg);
+  padding: var(--sp-8) var(--sp-8);
+  position: relative;
+  cursor: pointer;
+  transition: background var(--trans-mid);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-lt),
+    transparent
+  );
+}
+.blog-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--signal-dk);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.blog-card:hover {
+  background: var(--surface);
+}
+.blog-card:hover::after {
+  transform: scaleX(1);
+}
+/* Card meta row */
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+.blog-tag {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--signal-dk);
+  border: 1px solid var(--signal-dk);
+  padding: 0.15rem var(--sp-3);
+  opacity: 0.8;
+}
+.blog-date {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+/* Card title */
+.blog-title {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  line-height: 1.25;
+  transition: color var(--trans-fast);
+}
+.blog-card:hover .blog-title {
+  color: var(--accent-lt);
+}
+/* Card excerpt */
+.blog-excerpt {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  flex: 1;
+}
+/* Card byline */
+.blog-byline {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-dk);
+  margin-top: auto;
+}
+/* Read indicator */
+.blog-read {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: color var(--trans-fast);
+}
+.blog-card:hover .blog-read {
+  color: var(--signal-dk);
+}
+.blog-read::after {
+  content: '\2192';
+  transition: transform var(--trans-fast);
+}
+.blog-card:hover .blog-read::after {
+  transform: translateX(4px);
+}
+
+/* ══════════════════════════════
+   BLOG MODAL
+══════════════════════════════ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(9,9,9,0.97);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--sp-16) var(--sp-8) var(--sp-16);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out-expo);
+}
+.modal-overlay.is-open {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.modal-overlay.is-visible {
+  opacity: 1;
+}
+.modal {
+  max-width: 680px;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: var(--sp-12) var(--sp-12);
+  position: relative;
+  transform: translateY(24px);
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.modal-overlay.is-visible .modal {
+  transform: translateY(0);
+}
+/* Signal top bar */
+.modal::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--signal-dk),
+    transparent
+  );
+}
+.modal-close {
+  position: absolute;
+  top: var(--sp-6);
+  right: var(--sp-6);
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  padding: var(--sp-2) var(--sp-4);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+.modal-close:hover {
+  color: var(--text-primary);
+  border-color: var(--border-lt);
+}
+.modal-tag {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--signal-dk);
+  display: block;
+  margin-bottom: var(--sp-4);
+}
+.modal-title {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: var(--sp-3);
+}
+.modal-byline {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-dk);
+  display: block;
+  margin-bottom: var(--sp-8);
+}
+.modal-rule {
+  width: 48px;
+  height: 1px;
+  background: var(--signal-dk);
+  margin-bottom: var(--sp-8);
+}
+.modal-body {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 2;
+}
+.modal-body p {
+  margin-bottom: var(--sp-6);
+}
+.modal-body em {
+  color: var(--text-body);
+  font-style: italic;
+}
+.modal-gate {
+  margin-top: var(--sp-8);
+  padding: var(--sp-6) var(--sp-8);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  color: var(--accent-dk);
+  line-height: 1.8;
+}
+.modal-gate a {
+  color: var(--signal-dk);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: var(--sp-8) var(--sp-4) var(--sp-8);
+  }
+  .modal {
+    padding: var(--sp-8) var(--sp-6);
+  }
+}
 </style>
 
 <body>
@@ -1960,3 +2239,233 @@ ul, ol {
 </section>
 
 <div class="section-strip" aria-hidden="true"></div>
+
+<!-- ── SERMONES ── -->
+<section class="sermones section" id="sermones"
+  aria-label="Los Sermones del Reverendo Acosta">
+  <div class="container">
+    <div class="sermones-header reveal">
+      <span class="label">
+        Escrituras del Reverendo Cesar Acosta
+      </span>
+      <h2 class="section-title">Los Sermones</h2>
+      <div class="ornament"><span>✦</span></div>
+    </div>
+    <div class="blog-grid reveal-stagger">
+      <div class="blog-card" data-post="0" role="button"
+        tabindex="0" aria-label="Leer sermón 1">
+        <div class="blog-meta">
+          <span class="blog-tag">Fin del Mundo</span>
+          <span class="blog-date">12 Mar 2026</span>
+        </div>
+        <div class="blog-title">
+          Las Siete Señales del Fin que Nadie Quiere Ver
+        </div>
+        <p class="blog-excerpt">
+          Las escrituras del Adversario llevan siglos
+          anunciando lo que los profetas del miedo han
+          distorsionado. No es destrucción lo que se
+          acerca — es una transición que solo los
+          iniciados reconocerán a tiempo.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="1" role="button"
+        tabindex="0" aria-label="Leer sermón 2">
+        <div class="blog-meta">
+          <span class="blog-tag">Satanismo Hispano</span>
+          <span class="blog-date">5 Mar 2026</span>
+        </div>
+        <div class="blog-title">
+          Por Qué el Satanismo Latinoamericano es
+          Diferente a Todo lo Demás
+        </div>
+        <p class="blog-excerpt">
+          El satanismo que heredamos del norte llegó
+          traducido, filtrado, domesticado. Lo que corre
+          por nuestras venas viene de una oscuridad más
+          antigua — y más honesta.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="2" role="button"
+        tabindex="0" aria-label="Leer sermón 3">
+        <div class="blog-meta">
+          <span class="blog-tag">Iglesia de Satán</span>
+          <span class="blog-date">26 Feb 2026</span>
+        </div>
+        <div class="blog-title">
+          La Iglesia de Satán de LaVey: Lo que Enseña,
+          lo que Oculta, y lo que Nosotros Completamos
+        </div>
+        <p class="blog-excerpt">
+          Anton LaVey creó el lenguaje moderno del
+          satanismo. Pero habló solo en inglés, solo
+          desde San Francisco, solo desde su experiencia.
+          Aquí completamos lo que él dejó incompleto.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="3" role="button"
+        tabindex="0" aria-label="Leer sermón 4">
+        <div class="blog-meta">
+          <span class="blog-tag">Profecías Satánicas</span>
+          <span class="blog-date">19 Feb 2026</span>
+        </div>
+        <div class="blog-title">
+          El Libro de Job Revisado: Satán Tenía Razón
+          desde el Principio
+        </div>
+        <p class="blog-excerpt">
+          La historia más mal interpretada de toda la
+          Biblia es también la más honesta. Job no fue
+          una prueba de fe — fue una demostración del
+          poder del Adversario. Releerla lo cambia todo.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="4" role="button"
+        tabindex="0" aria-label="Leer sermón 5">
+        <div class="blog-meta">
+          <span class="blog-tag">Luciferianismo</span>
+          <span class="blog-date">10 Feb 2026</span>
+        </div>
+        <div class="blog-title">
+          Lucifer no Cayó. Eligió Descender.
+          La Diferencia es Todo.
+        </div>
+        <p class="blog-excerpt">
+          La caída de Lucifer es el acto fundacional
+          del libre albedrío en la historia humana.
+          No fue una derrota. Fue la primera decisión
+          soberana del universo. Somos sus herederos.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="5" role="button"
+        tabindex="0" aria-label="Leer sermón 6">
+        <div class="blog-meta">
+          <span class="blog-tag">Satanismo en Español</span>
+          <span class="blog-date">2 Feb 2026</span>
+        </div>
+        <div class="blog-title">
+          Cómo Iniciarse en el Satanismo: La Guía que
+          Ninguna Iglesia Quiso Escribir
+        </div>
+        <p class="blog-excerpt">
+          No existe un rito oficial de iniciación porque
+          el satanismo no te recluta — te reconoce. Este
+          artículo es para los que ya lo son y aún no
+          se han atrevido a admitirlo.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="6" role="button"
+        tabindex="0" aria-label="Leer sermón 7">
+        <div class="blog-meta">
+          <span class="blog-tag">Biblia Satánica</span>
+          <span class="blog-date">24 Ene 2026</span>
+        </div>
+        <div class="blog-title">
+          Los Nueve Enunciados Satánicos Explicados
+          para el Mundo de Habla Hispana
+        </div>
+        <p class="blog-excerpt">
+          LaVey los escribió en 1969. Nadie los ha
+          traducido con la profundidad que merecen.
+          Los analizamos uno por uno — y agregamos
+          el décimo que él no se atrevió a escribir.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="7" role="button"
+        tabindex="0" aria-label="Leer sermón 8">
+        <div class="blog-meta">
+          <span class="blog-tag">Fin del Mundo</span>
+          <span class="blog-date">15 Ene 2026</span>
+        </div>
+        <div class="blog-title">
+          El Apocalipsis Según el Adversario: Un
+          Calendario Que Ningún Profeta Publicó
+        </div>
+        <p class="blog-excerpt">
+          Las fechas del apocalipsis que circulan en
+          redes son desinformación. El verdadero
+          calendario del Adversario es más antiguo,
+          más preciso, y completamente ignorado.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="8" role="button"
+        tabindex="0" aria-label="Leer sermón 9">
+        <div class="blog-meta">
+          <span class="blog-tag">Satanismo Latino</span>
+          <span class="blog-date">8 Ene 2026</span>
+        </div>
+        <div class="blog-title">
+          Satanismo en México, Colombia y el Resto
+          de Latinoamérica: Por Qué Crecemos
+        </div>
+        <p class="blog-excerpt">
+          Las búsquedas de satanismo en español han
+          crecido sostenidamente. No es una moda.
+          Es un despertar colectivo que ya no
+          tiene reversa.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+      <div class="blog-card" data-post="9" role="button"
+        tabindex="0" aria-label="Leer sermón 10">
+        <div class="blog-meta">
+          <span class="blog-tag">Ritual Satánico</span>
+          <span class="blog-date">1 Ene 2026</span>
+        </div>
+        <div class="blog-title">
+          El Primer Ritual del Año Nuevo Satánico:
+          Cómo Consagrar el Año que Viene
+        </div>
+        <p class="blog-excerpt">
+          El año nuevo gregoriano es una convención
+          del rebaño. Pero la energía colectiva de
+          millones enfocados en el cambio es real.
+          Los iniciados sabemos cómo usarla.
+        </p>
+        <div class="blog-byline">✦ Rev. Cesar Acosta</div>
+        <div class="blog-read">Leer Sermón</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-strip" aria-hidden="true"></div>
+
+<!-- ── BLOG MODAL ── -->
+<div class="modal-overlay" id="modalOverlay"
+  role="dialog" aria-modal="true"
+  aria-labelledby="modalTitle">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose"
+      aria-label="Cerrar">✕ Cerrar</button>
+    <span class="modal-tag" id="modalTag"></span>
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <span class="modal-byline" id="modalByline"></span>
+    <div class="modal-rule" aria-hidden="true"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-gate">
+      Este sermón es un extracto del archivo de la
+      Iglesia Cristiana Satánica.<br>
+      Para acceder a los textos completos,
+      <a href="#alianza">consagra tu registro</a>
+      a la Alianza del Adversario.
+    </div>
+  </div>
+</div>
