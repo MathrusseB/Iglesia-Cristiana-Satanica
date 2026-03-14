@@ -1758,6 +1758,211 @@ ul, ol {
     padding: var(--sp-8) var(--sp-6);
   }
 }
+
+/* ══════════════════════════════
+   ALIANZA — EMAIL SIGNUP
+══════════════════════════════ */
+.alianza {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+/* Radial ambient center glow */
+.alianza::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    ellipse,
+    rgba(212,192,80,0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.alianza .container {
+  position: relative;
+  z-index: 1;
+}
+.alianza-header {
+  margin-bottom: var(--sp-8);
+}
+.alianza-header .label {
+  margin-bottom: var(--sp-4);
+}
+.alianza-header .section-title {
+  margin-bottom: var(--sp-4);
+}
+.alianza-sub {
+  max-width: 500px;
+  margin: 0 auto var(--sp-6);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+.alianza-sub strong {
+  color: var(--text-body);
+  font-style: normal;
+}
+/* Walpurgis date pill */
+.walpurgis-pill {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--signal-dk);
+  border: 1px solid var(--signal-dk);
+  padding: var(--sp-2) var(--sp-8);
+  margin-bottom: var(--sp-8);
+  opacity: 0.85;
+}
+/* YouTube/Zoom announcement banner */
+.announce-banner {
+  max-width: 680px;
+  margin: 0 auto var(--sp-10);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--signal-dk);
+  padding: var(--sp-6) var(--sp-8);
+  text-align: left;
+}
+.announce-banner p {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--text-body);
+  line-height: 1.9;
+}
+.announce-banner strong {
+  color: var(--signal-dk);
+}
+/* Signup form card */
+.signup-card {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: var(--sp-12) var(--sp-10);
+  position: relative;
+  text-align: left;
+}
+.signup-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--signal-dk),
+    transparent
+  );
+}
+/* Form fields */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+.form-field label {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-dk);
+}
+.form-field input,
+.form-field select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom-color: var(--border-lt);
+  color: var(--text-primary);
+  padding: var(--sp-4) var(--sp-4);
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: var(--text-base);
+  outline: none;
+  transition: border-color var(--trans-fast),
+              background var(--trans-fast);
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--signal-dk);
+  background: var(--surface-2);
+}
+.form-field input::placeholder {
+  color: var(--text-dim);
+  font-style: italic;
+}
+/* Select arrow */
+.select-wrap {
+  position: relative;
+}
+.select-wrap::after {
+  content: '\25BE';
+  position: absolute;
+  right: var(--sp-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-dk);
+  font-size: var(--text-sm);
+  pointer-events: none;
+}
+/* Submit button — full width */
+.form-submit {
+  width: 100%;
+  margin-top: var(--sp-4);
+}
+/* Form note */
+.form-note {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: var(--sp-4);
+  line-height: 1.8;
+}
+/* Success state — hidden by default */
+.signup-success {
+  display: none;
+  text-align: center;
+  padding: var(--sp-8);
+}
+.signup-success-title {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: var(--sp-4);
+}
+.signup-success-sub {
+  font-family: 'Cinzel', serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-dk);
+  line-height: 1.9;
+}
+@media (max-width: 768px) {
+  .signup-card {
+    padding: var(--sp-8) var(--sp-6);
+  }
+  .announce-banner {
+    text-align: left;
+    padding: var(--sp-6);
+  }
+}
 </style>
 
 <body>
@@ -2469,3 +2674,121 @@ ul, ol {
     </div>
   </div>
 </div>
+
+<!-- ── ALIANZA ── -->
+<section class="alianza section" id="alianza"
+  aria-label="La Alianza del Adversario">
+  <div class="container">
+    <div class="alianza-header reveal">
+      <span class="label">
+        Únete a la Alianza del Adversario
+      </span>
+      <h2 class="section-title">Recibe los Sermones</h2>
+      <div class="ornament"><span>✦</span></div>
+    </div>
+    <p class="alianza-sub reveal">
+      El Reverendo Acosta distribuirá sus primeros
+      materiales el
+      <strong>1 de Mayo de 2026 — Noche de Walpurgis.</strong>
+      Sermones escritos, luego audio, luego video.
+      Solo para los registrados.
+    </p>
+    <div class="walpurgis-pill reveal">
+      Primera Transmisión · Walpurgis 2026 · 30 de Abril
+    </div>
+    <div class="announce-banner reveal">
+      <p>
+        <strong>Próximamente en YouTube y Zoom —</strong>
+        El Reverendo Acosta conducirá sermones en vivo,
+        sesiones de preguntas y respuestas con la
+        congregación, y rituales interactivos de
+        iniciación. Solo los registrados en esta lista
+        recibirán acceso prioritario.
+        <strong>Las plazas para los primeros eventos
+        son limitadas.</strong>
+      </p>
+    </div>
+    <div class="signup-card reveal">
+      <div id="signupForm">
+        <div class="form-field">
+          <label for="fname">Nombre</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Tu nombre"
+            autocomplete="given-name"
+            required>
+        </div>
+        <div class="form-field">
+          <label for="femail">Correo Electrónico</label>
+          <input
+            type="email"
+            id="femail"
+            name="femail"
+            placeholder="correo@ejemplo.com"
+            autocomplete="email"
+            inputmode="email"
+            required>
+        </div>
+        <div class="form-field">
+          <label for="fpais">País de Origen</label>
+          <div class="select-wrap">
+            <select id="fpais" name="fpais" required>
+              <option value="" disabled selected>
+                Selecciona tu país
+              </option>
+              <option>México</option>
+              <option>Colombia</option>
+              <option>Argentina</option>
+              <option>España</option>
+              <option>Venezuela</option>
+              <option>Perú</option>
+              <option>Chile</option>
+              <option>Ecuador</option>
+              <option>Guatemala</option>
+              <option>Cuba</option>
+              <option>República Dominicana</option>
+              <option>Honduras</option>
+              <option>Bolivia</option>
+              <option>Paraguay</option>
+              <option>El Salvador</option>
+              <option>Nicaragua</option>
+              <option>Costa Rica</option>
+              <option>Puerto Rico</option>
+              <option>Uruguay</option>
+              <option>Panamá</option>
+              <option>Estados Unidos (hispano)</option>
+              <option>Brasil</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+        <button
+          class="btn btn-primary form-submit"
+          id="signupSubmit"
+          type="button">
+          <span>Consagrar mi Registro</span>
+        </button>
+        <p class="form-note">
+          Al registrarte aceptas recibir comunicaciones
+          de la Iglesia Cristiana Satánica.<br>
+          Sin spam. Sin herejías.
+        </p>
+      </div>
+      <div class="signup-success" id="signupSuccess">
+        <span class="signup-success-title">
+          Bienvenido a la Alianza
+        </span>
+        <span class="signup-success-sub">
+          Tu alma ha sido registrada en los archivos
+          del Señor Oscuro.<br>
+          El Reverendo Acosta se comunicará contigo
+          en Walpurgis.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-strip" aria-hidden="true"></div>
